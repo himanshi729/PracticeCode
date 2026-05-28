@@ -20,8 +20,10 @@ void append(struct Array *arr, int x){
 
 void insert(struct Array *arr, int index, int x){
     if(index >= 0 && index <=arr->length){
-        for(int i=arr->length; i>index; i--)
-        arr->a[i]=arr->a[i-1];
+        for(int i=arr->length; i>index; i--){
+            // shifting of index
+             arr->a[i]=arr->a[i-1];
+            }            
         arr->a[index]=x;
         arr->length ++;
     }
@@ -30,9 +32,10 @@ void insert(struct Array *arr, int index, int x){
 
 int main(){
     struct Array arr = {{2, 3, 4, 5, 6}, 20, 10};
-  
+    
+    printf("\n%d\n", arr.size);
     insert(&arr, 7, 20);
     append(&arr, 10);
-      display(arr);
+    display(arr);
     return 0;
 }
