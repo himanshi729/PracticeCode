@@ -67,10 +67,51 @@ int BinarySearch(struct Array *arr, int key){
              h = mid-1;
         }
     }
-    printf("element Not found");
+    printf("\nElement Not found");
     return -1;
 }
 
+int RBinarySearch(int a[], int l, int h, int key){
+    int mid; 
+    while(l<=h){
+        mid=(l+h)/2;
+        if(a[mid] == key)
+            return mid;
+        else if(key<a[mid])
+            return RBinarySearch(a, l, mid-1, key);
+        else
+            return RBinarySearch(a, mid+1, h, key);
+    }
+    return -1;
+}
+
+int Max(struct Array arr){
+    int max = arr.a[0];
+    for(int i=0; i<arr.length; i++){
+        if(arr.a[i] > max)
+        return max;
+    }
+}
+
+int Min(struct Array arr){
+    int min = arr.a[0];
+    for(int i=0; i<arr.length; i++){
+        if(arr.a[i]<min)
+        return min;
+    }
+}
+
+int ReverseArray(struct Array *arr){
+    int *B ; 
+    B = (int*)malloc(arr->length * sizeof(int));
+    for(int i = arr->length, j=0; i>=0; i--, j++){
+        B[j] = arr->a[i];
+    }
+    for(int i=0; i<arr->length; i++){
+        arr->a[i] = B[i];
+    }
+    
+}
 int main(){
     struct Array arr = {{2,4,6,8,10}, 30, 10};
 
