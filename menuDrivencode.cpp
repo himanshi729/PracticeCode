@@ -363,7 +363,7 @@ int main(){
     int ch, sz;
     int x,index;
 
-    cout<<"Enter Size of Array";
+    cout<<"Enter Size of Array/n";
     cin>>sz;
 
     arr1 = new Array(sz);
@@ -381,19 +381,19 @@ int main(){
     scanf("%d",&ch);
 
     switch(ch){
-    case 1: cout<<"Enter an element and index";
+    case 1: cout<<"Enter an element and index ";
             cin>>x>>index;
             arr1->Insert(index, x);
             break;
     case 2: cout<<"Enter index ";
             cin>>index;
             x=arr1->Delete(index);
-            cout<<"Deleted Element is %d\n",x;
+            cout<<"Deleted Element is "<<x;
             break;
     case 3:cout<<"Enter element to search ";
             scanf("%d",&x);
             index=arr1->LinearSearch(x);
-            cout<<"Element index %d",index;
+            cout<<"Element index "<<index;
             break;
     case 4:cout<<"Sum is "<<arr1->Sum();
             break;

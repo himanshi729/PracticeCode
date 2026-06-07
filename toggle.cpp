@@ -1,3 +1,5 @@
+// C- code
+
 // #include<stdio.h>
 // int main(){
     // char a[] = "wElCome";
@@ -14,7 +16,7 @@
     // return 0;
 // }
 
-
+// code in c++
 #include<iostream>
 using namespace std; 
 
